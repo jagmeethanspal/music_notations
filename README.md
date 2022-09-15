@@ -10,6 +10,9 @@ We use a Perl module to cover the following musical notations:
 ### Indian (Hindustani) Notes
 `Sa Re Ga Ma Pa Dha Ni`      (along with their _Komal_[^2] and _Tivra_[^3] variants)
 
+### French/Italian Notes
+`Do Re Mi Fa Sol La Ti`      (along with their variants)
+
 ## Reasoning, Rules, Requirements and Cautions for notations
 ### Indian Musical Notation
 In the Indian Musical Notation context:
