@@ -3,6 +3,9 @@
 #
 # Perl Module
 # Module: Music Notations
+# Western, French/Italian, Indian music notations
+# Also Refer README.md
+#
 # Author: Jagmeet Singh Hanspal
 #
 
@@ -38,8 +41,9 @@ our %notation = (
     ],
     
     sargam =>  ["S","r", "R","g", "G","m","M", "P","d", "D","n", "N"],
+    # Use only for representation and index, not for file-name
     
-    sargam_file =>  ["Sa","kRe","Re","kGa","Ga","Ma","tMa","Pa","kDha","Dha","kNi","Ni"],
+    sur =>  ["Sa","kRe","Re","kGa","Ga","Ma","tMa","Pa","kDha","Dha","kNi","Ni"],
 
     sur_name => [
         "Shadaj",
@@ -54,7 +58,13 @@ our %notation = (
         "Shuddh Dhaivat",
         "Komal Nishad",
         "Shuddh Nishad"
-    ]
+    ],
+
+    solfege => {
+        sharp => ["Do","Di","Re","Ri","Mi","Fa","Fi","Sol","Si","La","Li","Ti"],
+        flat =>  ["Do","Ra","Re","Me","Mi","Fa","Se","Sol","Le","La","Te","Ti"],
+    }
+
 );
 
 1;
