@@ -29,8 +29,14 @@ However, in order to cover the variationts, some experts use lower-case for _kom
     `S R G m P D N S'`   (while technically it denotes it but seems semantically incorrect for a Major-scale with a lower-case `m`)
 
 - Also, as a caution on Windows based systems (while the western counterparts are all different, for eg. D and Dd or D#) the Indian notes re.mp3 and Re.mp3 point to the  same file (as Windows file-system is case in-senstive). That is, while for Sargam notation we can continue to denote as: `Sa, re, Re, ga, Ga...` but in-order to have unique file-names for individual notes across Linux/Windows, we cannot intermix upper & lower case (eg. on Windows systems). This problem is not faced with Western notation.
+
+#### Other considerations
 - The higher and lower octaves (_saptak_[^5]) also require their own notation(s) too.
 - Standard Music notations also use complex subscripts, superscripts and any unicode characters that we want to avoid (rather overcome).
+- If you are mixing different systems/families together, the notations may clash. Examples:
+  - `D` (or `G`) in Western and similar notations in Indian Sargam
+  - `Re` in Indian Sargam and similar notation in Solfege
+
 
 ## Our notation
 Major Scale: `Sa Re Ga Ma Pa Dha Ni Sa` (C D E F G A B)   

@@ -60,10 +60,8 @@ our %notation = (
         "Shuddh Nishad"
     ],
 
-    solfege => {
-        sharp => ["Do","Di","Re","Ri","Mi","Fa","Fi","Sol","Si","La","Li","Ti"],
-        flat =>  ["Do","Ra","Re","Me","Mi","Fa","Se","Sol","Le","La","Te","Ti"],
-    }
+    solfege_flat  => ["Do","Ra","Re","Me","Mi","Fa","Se","Sol","Le","La","Te","Ti"],
+    solfege_sharp => ["Do","Di","Re","Ri","Mi","Fa","Fi","Sol","Si","La","Li","Ti"],
 
 );
 
