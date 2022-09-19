@@ -54,11 +54,11 @@ our %notation = (
         "Major Seventh"
     ],
     
-    sargam =>  ["S","r", "R","g", "G","m","M", "P","d", "D","n", "N"],
+    sargam =>  ["Sa","kRe","Re","kGa","Ga","Ma","tMa","Pa","kDha","Dha","kNi","Ni"],
+
+    sur =>  ["S","r", "R","g", "G","m","M", "P","d", "D","n", "N"],
     # Use only for representation and index, not for file-name
     
-    sur =>  ["Sa","kRe","Re","kGa","Ga","Ma","tMa","Pa","kDha","Dha","kNi","Ni"],
-
     sur_name => [
         "Shadaj",
         "Komal Rishab",

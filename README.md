@@ -1,26 +1,64 @@
 # Music Notations
-Indian and Western (etc) Music Notation(s) as well as mapping of the musical notes (Sur [^1])
+Indian and Western (etc) Music Notation(s) as well as mapping and conversion of the Musical Notes/Sur[^1]
 
-## Current Support
-We use a Perl module to cover the following musical notations:
+**Note:** The initial implementation is using Perl. The repo is open to accepting contributions for other notation and programming language(s) too.
 
-### Western Notes 
+# Installation
+git clone (or copy the extracted files) to a directory on a machine that supports Perl (tested on version 5)
+
+# Usage
+Use the "convert.pl" file for conversion of musical notations, like:   
+`> ./convert.pl [All]`   
+OR,   
+`> perl convert.pl [All]`   
+
+## Example 1 (Full conversion table)
+`> ./convert.pl All`
+```
+Western                         Sargam                                     Solfege              
+Note       Name                 Sur        Note       Name                 Flat       Sharp     
+C          Unison               S          Sa         Shadaj               Do         Do        
+Db         Minor Second         r          kRe        Komal Rishab         Ra         Di        
+D          Major Second         R          Re         Shuddh Rishab        Re         Re   
+etc..
+```
+
+## Example 2 (Specific note conversion)
+`> ./convert.pl`
+```
+[1] Enter your Musical Notation System: western
+
+[1] Which Musical Note do you want to convert: Eb    
+
+[1] Enter the Musical Notation system you require: sargam
+
+Converting "western" note "Eb" to "sargam":
+name           : Komal Gandhar
+short          : g
+notation       : kGa
+
+```
+
+# Current Support
+We cover the following musical notations:
+
+## Western Notes 
 `C D E F G A B`      (along with their _Flat_ and _Sharp_ counterparts)
 
-### Indian (Hindustani) Notes
+## Indian (Hindustani) Notes
 `Sa Re Ga Ma Pa Dha Ni`      (along with their _Komal_[^2] and _Tivra_[^3] variants)
 
-### French/Italian Notes
+## French/Italian Notes
 `Do Re Mi Fa Sol La Ti`      (along with their variants)
 
-## Reasoning, Rules, Requirements and Cautions for notations
-### Indian Musical Notation
+# Reasoning, Rules, Requirements and Cautions for notations
+## Indian Musical Notation
 In the Indian Musical Notation context:
 Some have used: `Sa Re Ga Ma... etc`, while others use `S, R, G... etc`   (both are necessarily the same)
 
 However, in order to cover the variationts, some experts use lower-case for _komal_ (flat/b) or upper-case for _tivra_ (sharp/#) notes. This notation leads to some complications.
 
-#### Problems with Lower and Upper Case
+### Problems with Lower and Upper Case
 - First of all there is no upper or lower case in (most?) Indian Languages (eg Hindi). It is only through use of English that this option even exists.
 - Secondly, this does not leave a room for _shuddha_[^4] (pure/perfect) notes (as you need atleast 3 demarcations, one each for Flat, Peferct/Major and Sharp notes). 
 - As it is required to have separate notation for flat/pure/sharp (i.e. b/<none>/#) just using upper and lower-case and multiplexing that for pure/perfect/shuddha causes collision/confusion.
@@ -30,7 +68,7 @@ However, in order to cover the variationts, some experts use lower-case for _kom
 
 - Also, as a caution on Windows based systems (while the western counterparts are all different, for eg. D and Dd or D#) the Indian notes re.mp3 and Re.mp3 point to the  same file (as Windows file-system is case in-senstive). That is, while for Sargam notation we can continue to denote as: `Sa, re, Re, ga, Ga...` but in-order to have unique file-names for individual notes across Linux/Windows, we cannot intermix upper & lower case (eg. on Windows systems). This problem is not faced with Western notation.
 
-#### Other considerations
+### Other considerations
 - The higher and lower octaves (_saptak_[^5]) also require their own notation(s) too.
 - Standard Music notations also use complex subscripts, superscripts and any unicode characters that we want to avoid (rather overcome).
 - If you are mixing different systems/families together, the notations may clash. Examples:
@@ -57,7 +95,7 @@ Using the vocal sound `Sa, Re, Ga` (instead of just `S, R, G`) has benefits:
   - For human vocal-range, an ocatve lower and higher from the standard is enough thus `Pa-, Sa, Pa, Sa+, Pa+` suffices.
   - For musical instrucments (eg a mechanical Piano etc) full notation of the ocatve numbers become crucial.
 
-## Footnotes
+# Footnotes
 [^1]: Sur = Note(s)
 [^2]: Komal = Flat note (b)
 [^3]: Tivra = Sharp note (#)
