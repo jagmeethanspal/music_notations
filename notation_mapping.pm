@@ -1,13 +1,25 @@
 #!/usr/bin/perl
 
 #
-# Perl subroutines
-# Module: Notations Converter
+# Copyright 2022 Jagmeet Singh Hanspal
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); 
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#   http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, 
+# software distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+# See the License for the specific language governing permissions and 
+# limitations under the License.
+#
+
+#
+# Perl Module
+# Module: Notations Mapping
+# Creates a map/hash of Musical notes from different systems
 # Western, French/Italian, Indian music notations
 # Also Refer README.md
-#
-# Usage: ./notation_mapping.pm
-# Creates a map/hash of Musical notes from different systems
 #
 # Author: Jagmeet Singh Hanspal
 #
