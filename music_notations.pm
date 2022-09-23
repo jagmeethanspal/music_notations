@@ -37,7 +37,9 @@ our @ISA= qw( Exporter );
 our @EXPORT = qw(%notation);
 
 our %notation = (
-    western => ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"],
+    western_flat =>  ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"],
+
+    western_sharp => ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"],
 
     name => [
         "Unison",

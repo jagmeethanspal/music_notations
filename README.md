@@ -15,24 +15,24 @@ OR,
 ## Example 1 (Full conversion table)
 `> ./convert.pl All`
 ```
-Western                         Sargam                                     Solfege              
-Note       Name                 Sur        Note       Name                 Flat       Sharp     
-C          Unison               S          Sa         Shadaj               Do         Do        
-Db         Minor Second         r          kRe        Komal Rishab         Ra         Di        
-D          Major Second         R          Re         Shuddh Rishab        Re         Re   
+Western                                    Sargam                                     Solfege              
+Flat       Sharp      Name                 Sur        Note       Name                 Flat       Sharp     
+C          C          Unison               S          Sa         Shadaj               Do         Do        
+Db         C#         Minor Second         r          kRe        Komal Rishab         Ra         Di        
+D          D          Major Second         R          Re         Shuddh Rishab        Re         Re         
 etc..
 ```
 
 ## Example 2 (Specific note conversion)
 `> ./convert.pl`
 ```
-[1] Enter your Musical Notation System: western
+[1] Enter your Musical Notation System: western_flat
 
 [1] Which Musical Note do you want to convert: Eb    
 
 [1] Enter the Musical Notation system you require: sargam
 
-Converting "western" note "Eb" to "sargam":
+Converting "western_flat" note "Eb" to "sargam":
 name           : Komal Gandhar
 short          : g
 notation       : kGa

@@ -54,8 +54,11 @@ sub map_note_from_index {
     $notation_map{$system}{$note}{sargam}{notation} = $notation{sargam}[$index];
     $notation_map{$system}{$note}{sargam}{name} = $notation{sur_name}[$index];
 
-    $notation_map{$system}{$note}{western}{notation} = $notation{western}[$index];
-    $notation_map{$system}{$note}{western}{name} = $notation{name}[$index];
+    $notation_map{$system}{$note}{western_flat}{notation} = $notation{western_flat}[$index];
+    $notation_map{$system}{$note}{western_flat}{name} = $notation{name}[$index];
+
+    $notation_map{$system}{$note}{western_sharp}{notation} = $notation{western_sharp}[$index];
+    $notation_map{$system}{$note}{western_sharp}{name} = $notation{name}[$index];
 
     $notation_map{$system}{$note}{solfege_flat}{notation} = $notation{solfege_flat}[$index];
     $notation_map{$system}{$note}{solfege_sharp}{notation} = $notation{solfege_sharp}[$index];
@@ -63,9 +66,14 @@ sub map_note_from_index {
 
 sub map_western_notes {
     # Initialize the Mapping of Western Notes mapping
-    my $system="western";
+    my $system="western_flat";
     for my $i (0..11) {
-        my $n = $notation{western}[$i];
+        my $n = $notation{western_flat}[$i];
+        map_note_from_index($system, $n, $i);
+    }
+    $system="western_sharp";
+    for my $i (0..11) {
+        my $n = $notation{western_sharp}[$i];
         map_note_from_index($system, $n, $i);
     }
 }
@@ -106,15 +114,16 @@ sub map_notes {
 }
 
 sub print_notes_mapping {
-    my $system = "western";
+    my $system = "western_sharp";
 
     # Print the whole Octave
-    printf("%-31s %-42s %-21s\n","Western","Sargam", "Solfege");
-    printf("%-10s %-20s %-10s %-10s %-20s %-10s %-10s\n","Note","Name","Sur","Note","Name","Flat","Sharp");
+    printf("%-42s %-42s %-21s\n","Western","Sargam", "Solfege");
+    printf("%-10s %-10s %-20s %-10s %-10s %-20s %-10s %-10s\n","Flat","Sharp","Name","Sur","Note","Name","Flat","Sharp");
     for my $note (@{$notation{$system}}) {
         if(exists($notation_map{$system}{$note})) {
-            printf("%-10s %-20s %-10s %-10s %-20s %-10s %-10s\n", 
-            $notation_map{$system}{$note}{western}{notation}, $notation_map{$system}{$note}{western}{name}, 
+            printf("%-10s %-10s %-20s %-10s %-10s %-20s %-10s %-10s\n", 
+            $notation_map{$system}{$note}{western_flat}{notation}, $notation_map{$system}{$note}{western_sharp}{notation},
+            $notation_map{$system}{$note}{western_flat}{name}, 
             $notation_map{$system}{$note}{sargam}{short}, $notation_map{$system}{$note}{sargam}{notation}, 
             $notation_map{$system}{$note}{sargam}{name}, $notation_map{$system}{$note}{solfege_flat}{notation},
             $notation_map{$system}{$note}{solfege_sharp}{notation});
@@ -122,10 +131,11 @@ sub print_notes_mapping {
     }
 
     # Print the first note of the next Octave
-    $system = "western";
+    $system = "western_flat";
     if(exists($notation_map{$system}{C})) {
-        printf("%-10s %-20s %-10s %-10s %-20s %-10s %-10s\n", 
-        $notation_map{$system}{C}{western}{notation}."+", "Octave", $notation_map{$system}{C}{sargam}{short}."+", 
+        printf("%-10s %-10s %-20s %-10s %-10s %-20s %-10s %-10s\n", 
+        $notation_map{$system}{C}{western_flat}{notation}."+", $notation_map{$system}{C}{western_sharp}{notation}."+",
+        "Octave", $notation_map{$system}{C}{sargam}{short}."+", 
         $notation_map{$system}{C}{sargam}{notation}."+", $notation_map{$system}{C}{sargam}{name}." Taar Saptak",
         $notation_map{$system}{C}{solfege_flat}{notation}."+", $notation_map{$system}{C}{solfege_sharp}{notation}."+");
     }
